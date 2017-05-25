@@ -15,6 +15,7 @@ typedef void (^MyCallback)(id obj);
 + (void)requestTokenWithCode:(NSString *)code andCompletion:(MyCallback)callback;
 
 
++ (void)sendText:(NSString *)text andCompletion:(MyCallback)callback;
 
 
 
