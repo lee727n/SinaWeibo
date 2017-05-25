@@ -69,6 +69,8 @@
 		85B7DA601E5C11C100B3E488 /* YYTextWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7DA451E5C11C100B3E488 /* YYTextWeakProxy.m */; };
 		85B7DA611E5C11C100B3E488 /* YYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7DA471E5C11C100B3E488 /* YYLabel.m */; };
 		85B7DA621E5C11C100B3E488 /* YYTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7DA4A1E5C11C100B3E488 /* YYTextView.m */; };
+		85B7DA661E5C20DE00B3E488 /* WeiboView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7DA651E5C20DE00B3E488 /* WeiboView.m */; };
+		85B7DA691E5C211300B3E488 /* WeiboImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7DA681E5C211300B3E488 /* WeiboImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +201,10 @@
 		85B7DA491E5C11C100B3E488 /* YYTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextView.h; sourceTree = "<group>"; };
 		85B7DA4A1E5C11C100B3E488 /* YYTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextView.m; sourceTree = "<group>"; };
 		85B7DA631E5C134A00B3E488 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		85B7DA641E5C20DE00B3E488 /* WeiboView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboView.h; sourceTree = "<group>"; };
+		85B7DA651E5C20DE00B3E488 /* WeiboView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboView.m; sourceTree = "<group>"; };
+		85B7DA671E5C211300B3E488 /* WeiboImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboImageView.h; sourceTree = "<group>"; };
+		85B7DA681E5C211300B3E488 /* WeiboImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +248,10 @@
 				8501E6D01E5A89DF0018EC72 /* WebUtils.m */,
 				85B7D99B1E5BCC0400B3E488 /* Weibo.h */,
 				85B7D99C1E5BCC0400B3E488 /* Weibo.m */,
+				85B7DA641E5C20DE00B3E488 /* WeiboView.h */,
+				85B7DA651E5C20DE00B3E488 /* WeiboView.m */,
+				85B7DA671E5C211300B3E488 /* WeiboImageView.h */,
+				85B7DA681E5C211300B3E488 /* WeiboImageView.m */,
 				8501E6F51E5ABFB30018EC72 /* User.h */,
 				8501E6F61E5ABFB30018EC72 /* User.m */,
 				8501E6D21E5A96A50018EC72 /* Account.h */,
@@ -567,6 +577,7 @@
 				85B7DA5A1E5C11C100B3E488 /* NSParagraphStyle+YYText.m in Sources */,
 				85B7DA4B1E5C11C100B3E488 /* YYTextContainerView.m in Sources */,
 				8501E6F21E5ABE6E0018EC72 /* JSONModel+networking.m in Sources */,
+				85B7DA661E5C20DE00B3E488 /* WeiboView.m in Sources */,
 				8501E6C31E5A89D30018EC72 /* AFURLRequestSerialization.m in Sources */,
 				85B7DA5E1E5C11C100B3E488 /* YYTextTransaction.m in Sources */,
 				85B7DA611E5C11C100B3E488 /* YYLabel.m in Sources */,
@@ -574,6 +585,7 @@
 				85B7D9A41E5BCF6600B3E488 /* WeiboCell.m in Sources */,
 				8501E6D41E5A96A50018EC72 /* Account.m in Sources */,
 				85B7DA521E5C11C100B3E488 /* YYTextMagnifier.m in Sources */,
+				85B7DA691E5C211300B3E488 /* WeiboImageView.m in Sources */,
 				85B7DA4F1E5C11C100B3E488 /* YYTextKeyboardManager.m in Sources */,
 				8501E6C61E5A89D30018EC72 /* AFAutoPurgingImageCache.m in Sources */,
 				85B7DA5F1E5C11C100B3E488 /* YYTextUtilities.m in Sources */,

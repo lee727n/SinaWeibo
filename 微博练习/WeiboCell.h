@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Weibo.h"
+#import "WeiboView.h"
 @interface WeiboCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIButton *likeBtn;
 @property (weak, nonatomic) IBOutlet UIButton *commentBtn;
@@ -17,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nickLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *headIV;
 
+@property (nonatomic, strong)WeiboView *weiboView;
 @property (nonatomic, strong)Weibo *weibo;
 @end

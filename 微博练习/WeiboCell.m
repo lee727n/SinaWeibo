@@ -13,6 +13,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.weiboView = [[WeiboView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.headIV.frame)+kSpacing, kSW, 0)];
+    [self addSubview:self.weiboView];
+    
 }
 
 
@@ -29,6 +32,15 @@
     [self.repostBtn setTitle:weibo.reposts_count forState:UIControlStateNormal];
     
     NSLog(@"%@    %@ ",weibo.created_at,weibo.source);
+    
+    //把模型数据交给自定义weiboView
+    self.weiboView.weibo = weibo;
+  //更新控件的高度
+    CGRect frame = self.weiboView.frame;
+    frame.size.height = [weibo weiboHeight];
+    self.weiboView.frame = frame;
+
+    
     
     
     
