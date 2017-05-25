@@ -21,4 +21,6 @@ typedef void (^MyCallback)(id obj);
 
 + (void)requestHomeWeibosWithCompletion:(MyCallback)callback;
 
++ (void)requestCommentsWithWID:(NSString *)wid andCompletion:(MyCallback)callback;
+
 @end

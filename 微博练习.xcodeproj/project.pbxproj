@@ -41,6 +41,7 @@
 		8501E6F31E5ABE6E0018EC72 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501E6E81E5ABE6E0018EC72 /* JSONKeyMapper.m */; };
 		8501E6F41E5ABE6E0018EC72 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501E6EA1E5ABE6E0018EC72 /* JSONValueTransformer.m */; };
 		8501E6F71E5ABFB30018EC72 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501E6F61E5ABFB30018EC72 /* User.m */; };
+		850C7CF51E5D1B9100F3C204 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C7CF41E5D1B9100F3C204 /* DetailTableViewController.m */; };
 		85B7D99D1E5BCC0400B3E488 /* Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D99C1E5BCC0400B3E488 /* Weibo.m */; };
 		85B7D9A01E5BCE0D00B3E488 /* WeibosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D99F1E5BCE0D00B3E488 /* WeibosTableViewController.m */; };
 		85B7D9A41E5BCF6600B3E488 /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D9A21E5BCF6600B3E488 /* WeiboCell.m */; };
@@ -144,6 +145,8 @@
 		8501E6EB1E5ABE6E0018EC72 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		8501E6F51E5ABFB30018EC72 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		8501E6F61E5ABFB30018EC72 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		850C7CF31E5D1B9100F3C204 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
+		850C7CF41E5D1B9100F3C204 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		85B7D99B1E5BCC0400B3E488 /* Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weibo.h; sourceTree = "<group>"; };
 		85B7D99C1E5BCC0400B3E488 /* Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weibo.m; sourceTree = "<group>"; };
 		85B7D99E1E5BCE0D00B3E488 /* WeibosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeibosTableViewController.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				8501E6D31E5A96A50018EC72 /* Account.m */,
 				85B7D99E1E5BCE0D00B3E488 /* WeibosTableViewController.h */,
 				85B7D99F1E5BCE0D00B3E488 /* WeibosTableViewController.m */,
+				850C7CF31E5D1B9100F3C204 /* DetailTableViewController.h */,
+				850C7CF41E5D1B9100F3C204 /* DetailTableViewController.m */,
 				85B7D9A11E5BCF6600B3E488 /* WeiboCell.h */,
 				85B7D9A21E5BCF6600B3E488 /* WeiboCell.m */,
 				85B7D9A31E5BCF6600B3E488 /* WeiboCell.xib */,
@@ -532,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850C7CF51E5D1B9100F3C204 /* DetailTableViewController.m in Sources */,
 				8501E6EF1E5ABE6E0018EC72 /* JSONModelError.m in Sources */,
 				8501E6C21E5A89D30018EC72 /* AFSecurityPolicy.m in Sources */,
 				8501E6C41E5A89D30018EC72 /* AFURLResponseSerialization.m in Sources */,

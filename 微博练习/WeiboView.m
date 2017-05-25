@@ -81,8 +81,8 @@
     }else{
         self.reWeiboView.hidden = YES;
     }
-  
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
