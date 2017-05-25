@@ -25,6 +25,14 @@
     
     
 }
+- (IBAction)userInfoAction:(id)sender {
+    
+    [WebUtils requestUserInfoWithUID:[Account shareAccount].uid andCompletion:^(id obj) {
+        
+        
+    }];
+    
+}
 - (IBAction)sendAction:(id)sender {
     
     if ([Account shareAccount]) {
@@ -75,9 +83,12 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+  
+    [WebUtils requestHomeWeibosWithCompletion:^(id obj) {
+        
+    }];
+
 }
 
 

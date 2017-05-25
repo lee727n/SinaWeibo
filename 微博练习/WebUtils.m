@@ -5,6 +5,8 @@
 //  Created by tarena on 2017/2/18.
 //  Copyright © 2017年 tarena. All rights reserved.
 //
+#import "Weibo.h"
+#import "User.h"
 #import "Account.h"
 #import "WebUtils.h"
 #import "AFNetworking.h"
@@ -61,6 +63,73 @@
         NSLog(@"请求失败");
     }];
     
+    
+}
+
++(void)requestUserInfoWithUID:(NSString *)uid andCompletion:(MyCallback)callback{
+    
+    //通过AFNetworking发出http请求
+    NSString *path = @"https://api.weibo.com/2/users/show.json";
+    NSDictionary *parmas = @{@"access_token":[Account shareAccount].token,@"uid":uid};
+    
+    //创建会话管理器
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //设置响应序列化
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    
+    
+    //发出GET 或POST请求
+    [manager GET:path parameters:parmas progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功");
+        
+        //如果返回的数据为json字符串 使用以下代码
+        
+        //得到用户字典
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        //把字典转模型
+        User *u = [[User alloc]initWithDictionary:dic error:nil];
+        
+        callback(u);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败");
+    }];
+    
+    
+}
+
++(void)requestHomeWeibosWithCompletion:(MyCallback)callback{
+    
+    //通过AFNetworking发出http请求
+    NSString *path = @"https://api.weibo.com/2/statuses/home_timeline.json";
+    NSDictionary *parmas = @{@"access_token":[Account shareAccount].token};
+    
+    //创建会话管理器
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //设置响应序列化
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    
+    
+    //发出GET 或POST请求
+    [manager GET:path parameters:parmas progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功");
+        
+//        NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        
+        
+        //如果返回的数据为json字符串 使用以下代码
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        //得到字典数组
+        NSArray *weiboDicArr = dic[@"statuses"];
+        //把字典数组 转模型数组
+        NSArray *weibos = [Weibo arrayOfModelsFromDictionaries:weiboDicArr error:nil];
+        callback(weibos);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败");
+    }];
     
 }
 

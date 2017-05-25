@@ -17,6 +17,8 @@ typedef void (^MyCallback)(id obj);
 
 + (void)sendText:(NSString *)text andCompletion:(MyCallback)callback;
 
++ (void)requestUserInfoWithUID:(NSString *)uid andCompletion:(MyCallback)callback;
 
++ (void)requestHomeWeibosWithCompletion:(MyCallback)callback;
 
 @end
