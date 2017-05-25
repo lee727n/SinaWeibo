@@ -23,6 +23,18 @@
     
     
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/login.plist"];
+    NSDictionary *loginDic = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    if (loginDic) {
+        self.title = @"已登录";
+    }else self.title = @"未登录";
+    
+}
 - (IBAction)loginAction:(id)sender {
     LoginViewController *vc = [LoginViewController new];
     
