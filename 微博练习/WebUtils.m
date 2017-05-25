@@ -167,4 +167,33 @@
     
 }
 
+
++ (void)sendCommentWithText:(NSString *)text andWid:(NSString *)wid andCompletion:(MyCallback)callback{
+    
+    //通过AFNetworking发出http请求
+    NSString *path = @"https://api.weibo.com/2/comments/create.json";
+    NSDictionary *parmas = @{@"access_token":[Account shareAccount].token,@"comment":text,@"id":wid};
+    
+    //创建会话管理器
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
+    //设置响应序列化
+    [manager setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+    
+    
+    //发出GET 或POST请求
+    [manager POST:path parameters:parmas progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"请求成功");
+        
+        //如果返回的数据为json字符串 使用以下代码
+        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        callback(dic);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"请求失败");
+    }];
+    
+    
+}
+
 @end

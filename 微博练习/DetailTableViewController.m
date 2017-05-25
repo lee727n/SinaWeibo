@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"详情";
     WeiboView *wv = [[WeiboView alloc]initWithFrame:CGRectMake(0, 0, kSW, [self.weibo weiboHeight])];
     
     wv.weibo = self.weibo;
@@ -26,10 +26,7 @@
     self.tableView.tableHeaderView = wv;
     
     
-    [WebUtils requestCommentsWithWID:self.weibo.idstr andCompletion:^(id obj) {
-        self.comments = obj;
-        [self.tableView reloadData];
-    }];
+  
     
     [self.tableView registerNib:[UINib nibWithNibName:@"CommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
     
@@ -37,10 +34,50 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStyleDone target:self action:@selector(commentAction)];
 
+    [self loadComments];
+}
+
+- (void)loadComments{
+    [WebUtils requestCommentsWithWID:self.weibo.idstr andCompletion:^(id obj) {
+        self.comments = obj;
+        [self.tableView reloadData];
+    }];
 }
 
 - (void)commentAction {
     
+    
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提示" message:@"请输入评论的内容" preferredStyle:UIAlertControllerStyleAlert];
+    [ac addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+       textField.placeholder = @"说点儿什么。。。";
+    }];
+    
+    UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSString *info = ac.textFields[0].text;
+        
+        [WebUtils sendCommentWithText:info andWid:self.weibo.idstr andCompletion:^(id obj) {
+           
+            
+            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提示" message:@"评论完成！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //重新加载评论列表
+                
+                [self loadComments];
+            }];
+            
+            [ac addAction:action1];
+            [self presentViewController:ac animated:YES completion:nil];
+            
+            
+            
+        }];
+        
+        
+    }];
+    [ac addAction:action1];
+    UIAlertAction *action2 = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [ac addAction:action2];
+    [self presentViewController:ac animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

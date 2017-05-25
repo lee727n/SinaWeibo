@@ -23,4 +23,5 @@ typedef void (^MyCallback)(id obj);
 
 + (void)requestCommentsWithWID:(NSString *)wid andCompletion:(MyCallback)callback;
 
++ (void)sendCommentWithText:(NSString *)text andWid:(NSString *)wid andCompletion:(MyCallback)callback;
 @end
