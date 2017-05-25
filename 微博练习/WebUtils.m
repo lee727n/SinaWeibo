@@ -5,6 +5,7 @@
 //  Created by tarena on 2017/2/18.
 //  Copyright © 2017年 tarena. All rights reserved.
 //
+#import "Comment.h"
 #import "Weibo.h"
 #import "User.h"
 #import "Account.h"
@@ -149,15 +150,15 @@
     [manager GET:path parameters:parmas progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         
-            NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//            NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         
         
         //如果返回的数据为json字符串 使用以下代码
         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
         //此处写解析评论模型的代码
-//        NSArray *weibos = [Weibo arrayOfModelsFromDictionaries:dic[@"statuses"] error:nil];
+         NSArray *comments = [Comment arrayOfModelsFromDictionaries:dic[@"comments"] error:nil];
         
-//        callback(weibos);
+         callback(comments);
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {

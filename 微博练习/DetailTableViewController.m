@@ -5,12 +5,13 @@
 //  Created by tarena on 2017/2/22.
 //  Copyright © 2017年 tarena. All rights reserved.
 //
-
+#import "CommentCell.h"
+#import "Comment.h"
 #import "DetailTableViewController.h"
 #import "WeiboView.h"
 #import "WebUtils.h"
 @interface DetailTableViewController ()
-
+@property (nonatomic, strong)NSArray *comments;
 @end
 
 @implementation DetailTableViewController
@@ -26,36 +27,43 @@
     
     
     [WebUtils requestCommentsWithWID:self.weibo.idstr andCompletion:^(id obj) {
-        
+        self.comments = obj;
+        [self.tableView reloadData];
     }];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"CommentCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"cell"];
+    
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"评论" style:UIBarButtonItemStyleDone target:self action:@selector(commentAction)];
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)commentAction {
+    
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    
+    return self.comments.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.comment = self.comments[indexPath.row];
     
     return cell;
 }
-*/
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    Comment *c = self.comments[indexPath.row];
+    return 70+ [c commentHeight];
+}
 
 /*
 // Override to support conditional editing of the table view.

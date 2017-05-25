@@ -42,6 +42,9 @@
 		8501E6F41E5ABE6E0018EC72 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501E6EA1E5ABE6E0018EC72 /* JSONValueTransformer.m */; };
 		8501E6F71E5ABFB30018EC72 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8501E6F61E5ABFB30018EC72 /* User.m */; };
 		850C7CF51E5D1B9100F3C204 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C7CF41E5D1B9100F3C204 /* DetailTableViewController.m */; };
+		850C7CFB1E5D3A7F00F3C204 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C7CF71E5D3A7F00F3C204 /* CommentCell.m */; };
+		850C7CFC1E5D3A7F00F3C204 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 850C7CF81E5D3A7F00F3C204 /* CommentCell.xib */; };
+		850C7CFD1E5D3A7F00F3C204 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 850C7CFA1E5D3A7F00F3C204 /* Comment.m */; };
 		85B7D99D1E5BCC0400B3E488 /* Weibo.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D99C1E5BCC0400B3E488 /* Weibo.m */; };
 		85B7D9A01E5BCE0D00B3E488 /* WeibosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D99F1E5BCE0D00B3E488 /* WeibosTableViewController.m */; };
 		85B7D9A41E5BCF6600B3E488 /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85B7D9A21E5BCF6600B3E488 /* WeiboCell.m */; };
@@ -147,6 +150,11 @@
 		8501E6F61E5ABFB30018EC72 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		850C7CF31E5D1B9100F3C204 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		850C7CF41E5D1B9100F3C204 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
+		850C7CF61E5D3A7F00F3C204 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		850C7CF71E5D3A7F00F3C204 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		850C7CF81E5D3A7F00F3C204 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		850C7CF91E5D3A7F00F3C204 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		850C7CFA1E5D3A7F00F3C204 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		85B7D99B1E5BCC0400B3E488 /* Weibo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Weibo.h; sourceTree = "<group>"; };
 		85B7D99C1E5BCC0400B3E488 /* Weibo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Weibo.m; sourceTree = "<group>"; };
 		85B7D99E1E5BCE0D00B3E488 /* WeibosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeibosTableViewController.h; sourceTree = "<group>"; };
@@ -255,6 +263,11 @@
 				85B7DA651E5C20DE00B3E488 /* WeiboView.m */,
 				85B7DA671E5C211300B3E488 /* WeiboImageView.h */,
 				85B7DA681E5C211300B3E488 /* WeiboImageView.m */,
+				850C7CF61E5D3A7F00F3C204 /* CommentCell.h */,
+				850C7CF71E5D3A7F00F3C204 /* CommentCell.m */,
+				850C7CF81E5D3A7F00F3C204 /* CommentCell.xib */,
+				850C7CF91E5D3A7F00F3C204 /* Comment.h */,
+				850C7CFA1E5D3A7F00F3C204 /* Comment.m */,
 				8501E6F51E5ABFB30018EC72 /* User.h */,
 				8501E6F61E5ABFB30018EC72 /* User.m */,
 				8501E6D21E5A96A50018EC72 /* Account.h */,
@@ -525,6 +538,7 @@
 				8501E6EC1E5ABE6E0018EC72 /* Info.plist in Resources */,
 				85B7D9A51E5BCF6600B3E488 /* WeiboCell.xib in Resources */,
 				8501E6931E5A7B380018EC72 /* LaunchScreen.storyboard in Resources */,
+				850C7CFC1E5D3A7F00F3C204 /* CommentCell.xib in Resources */,
 				8501E6901E5A7B380018EC72 /* Assets.xcassets in Resources */,
 				8501E68E1E5A7B380018EC72 /* Main.storyboard in Resources */,
 			);
@@ -562,6 +576,7 @@
 				85B7DA571E5C11C100B3E488 /* YYTextRubyAnnotation.m in Sources */,
 				85B7DA621E5C11C100B3E488 /* YYTextView.m in Sources */,
 				85B7DA4C1E5C11C100B3E488 /* YYTextDebugOption.m in Sources */,
+				850C7CFD1E5D3A7F00F3C204 /* Comment.m in Sources */,
 				85B7DA581E5C11C100B3E488 /* YYTextRunDelegate.m in Sources */,
 				8501E6C81E5A89D30018EC72 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				8501E6F41E5ABE6E0018EC72 /* JSONValueTransformer.m in Sources */,
@@ -584,6 +599,7 @@
 				85B7DA4B1E5C11C100B3E488 /* YYTextContainerView.m in Sources */,
 				8501E6F21E5ABE6E0018EC72 /* JSONModel+networking.m in Sources */,
 				85B7DA661E5C20DE00B3E488 /* WeiboView.m in Sources */,
+				850C7CFB1E5D3A7F00F3C204 /* CommentCell.m in Sources */,
 				8501E6C31E5A89D30018EC72 /* AFURLRequestSerialization.m in Sources */,
 				85B7DA5E1E5C11C100B3E488 /* YYTextTransaction.m in Sources */,
 				85B7DA611E5C11C100B3E488 /* YYLabel.m in Sources */,
