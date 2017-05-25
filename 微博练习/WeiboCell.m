@@ -28,6 +28,7 @@
     [self.likeBtn setTitle:weibo.attitudes_count forState:UIControlStateNormal];
     [self.repostBtn setTitle:weibo.reposts_count forState:UIControlStateNormal];
     
+    NSLog(@"%@    %@ ",weibo.created_at,weibo.source);
     
     
     
