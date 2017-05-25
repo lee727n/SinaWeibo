@@ -1,0 +1,21 @@
+//
+//  PrefixHeader.pch
+//  微博练习
+//
+//  Created by tarena on 2017/2/21.
+//  Copyright © 2017年 tarena. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#define kSW [UIScreen mainScreen].bounds.size.width
+#define kSH [UIScreen mainScreen].bounds.size.height
+#define kSpacing 8
+#define kImageSize (kSW-4*kSpacing)/3.0
+#import "UIImageView+AFNetworking.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

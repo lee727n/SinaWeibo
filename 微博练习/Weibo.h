@@ -22,6 +22,10 @@
 //转发微博
 @property (nonatomic, strong)Weibo<Optional> *retweeted_status;
 
+-(float)weiboHeight;
+-(float)textHeight;
+-(float)imageHeight;
+
 
 
 @end

@@ -48,9 +48,10 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    Weibo *w = self.weibos[indexPath.row];
     
     
-    return 100+indexPath.row*100;
+    return [w weiboHeight]+100;
 }
 
 /*

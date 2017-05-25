@@ -7,7 +7,7 @@
 //
 
 #import "Weibo.h"
-
+#import "YYTextView.h"
 @implementation Weibo
 
 -(void)setSource:(NSString *)source{
@@ -61,6 +61,43 @@
     
 }
 
+-(float)weiboHeight{
+    
+    float h = [self textHeight];
+    if (self.pic_urls.count>0) {
+        //加上图片高度
+        h += [self imageHeight];
+    }
+    //判断是否有转发
+    if (self.retweeted_status) {
+        h += [self.retweeted_status weiboHeight];
+    }
+    
+    return h;
+}
+
+-(float)textHeight{
+    
+    YYTextView *tv = [[YYTextView alloc]initWithFrame:CGRectMake(0, 0, kSW-2*8,0)];
+    
+    tv.text = self.text;
+    return tv.textLayout.textBoundingSize.height;
+}
+
+-(float)imageHeight{
+    
+    if (self.pic_urls.count==1) {
+        return 200;
+    }else if (self.pic_urls.count>1&&self.pic_urls.count<=3){//单行
+        
+        return kImageSize;
+    }else if (self.pic_urls.count>3&&self.pic_urls.count<=6){//2行
+        
+        return 2*kImageSize+kSpacing;
+    }else{//3行
+        return 3*kImageSize+2*kSpacing;
+    }
+}
 
 
 

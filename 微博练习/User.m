@@ -11,6 +11,7 @@
 @implementation User
 +(JSONKeyMapper *)keyMapper{
     
+   
     
     return [[JSONKeyMapper alloc]initWithModelToJSONDictionary:@{@"uid":@"id",@"intro":@"description"}];
 }
