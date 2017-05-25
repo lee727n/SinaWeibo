@@ -116,16 +116,15 @@
     [manager GET:path parameters:parmas progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSLog(@"请求成功");
         
-//        NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+//         NSString *jsonString = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
         
         
         //如果返回的数据为json字符串 使用以下代码
-        NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
-        //得到字典数组
-        NSArray *weiboDicArr = dic[@"statuses"];
-        //把字典数组 转模型数组
-        NSArray *weibos = [Weibo arrayOfModelsFromDictionaries:weiboDicArr error:nil];
+         NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:nil];
+        NSArray *weibos = [Weibo arrayOfModelsFromDictionaries:dic[@"statuses"] error:nil];
+        
         callback(weibos);
+       
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"请求失败");

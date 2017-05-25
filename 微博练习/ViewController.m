@@ -9,7 +9,7 @@
 #import "Account.h"
 #import "LoginViewController.h"
 #import "ViewController.h"
-
+#import "WeibosTableViewController.h"
 @interface ViewController ()
 
 @end
@@ -22,6 +22,13 @@
   
     
     
+    
+    
+}
+- (IBAction)weiboListAction:(id)sender {
+    
+    WeibosTableViewController *vc = [WeibosTableViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
     
     
 }
@@ -83,13 +90,7 @@
 }
 
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-  
-    [WebUtils requestHomeWeibosWithCompletion:^(id obj) {
-        
-    }];
-
-}
+ 
 
 
 @end
